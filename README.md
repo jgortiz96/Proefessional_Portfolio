@@ -1,2 +1,2 @@
 Portfolio website
-https://jgortiz96.github.io/Proefessional_Portfolio/
+https://jgortiz96.github.io/Professional_Portfolio/
