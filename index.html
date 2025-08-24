@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus Ortiz - IT Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569'
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            300: '#67e8f9'
+                        },
+                        white: '#ffffff',
+                        gray: {
+                            300: '#d1d5db',
+                            400: '#9ca3af'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+        .backdrop-blur {
+            backdrop-filter: blur(8px);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .transition-colors {
+            transition: color 0.3s ease;
+        }
+        .hover\:scale-110:hover {
+            transform: scale(1.1);
+        }
+        .scale-110 {
+            transform: scale(1.1);
+        }
+        .blur-xl {
+            filter: blur(24px);
+        }
+        .project-content {
+            display: none;
+        }
+        .project-content.expanded {
+            display: block;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-900">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full bg-slate-900/95 backdrop-blur border-b border-slate-700">
+        <div class="container mx-auto px-6 flex h-20 items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <h1 class="text-2xl text-white font-medium">Professional Portfolio</h1>
+            </div>
+            <nav class="flex items-center space-x-8">
+                <a href="#home" class="text-cyan-400 hover:text-cyan-300 transition-colors">Home</a>
+                <a href="#about" class="text-white hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="text-white hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#projects" class="text-white hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="text-white hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl lg:text-6xl text-white">Jesus Ortiz</h1>
+                        <p class="text-xl text-white">
+                            <span class="text-cyan-400">IT Professional & aspiring Network Engineer</span>
+                        </p>
+                    </div>
+                    
+                    <p class="text-gray-300 text-lg max-w-lg leading-relaxed">
+                        Marine Corps veteran with 5+ years of IT experience. Specializing in network administration, systems administration, 
+                        and telecommunications. Currently pursuing CompTIA, Cloud, and Cisco certifications.
+                    </p>
+                    <p class="text-gray-300 text-lg max-w-lg leading-relaxed">
+                        Based out of Austin, TX. Not willing to relocate.
+                    </p>
+
+                    <!-- Professional Links -->
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/jesus-g-ortiz" target="_blank" rel="noopener noreferrer" 
+                           class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-cyan-400 hover:border-cyan-400 hover:text-slate-900 transition-all text-white" 
+                           title="LinkedIn Profile">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.credly.com/users/jesus-g-ortiz" target="_blank" rel="noopener noreferrer" 
+                           class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-cyan-400 hover:border-cyan-400 hover:text-slate-900 transition-all text-white" 
+                           title="Credly Account">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </a>
+                        <a href="https://jgortiz96.github.io/Jesus_Ortiz_Resume_Site/" target="_blank" rel="noopener noreferrer" 
+                           class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center hover:bg-cyan-400 hover:border-cyan-400 hover:text-slate-900 transition-all text-white" 
+                           title="Resume Site">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Professional Image -->
+                <div class="flex justify-center lg:justify-center">
+                    <div class="relative">
+                        <!-- Hexagonal background with glow effect -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-3xl blur-xl opacity-30 scale-110"></div>
+                        <div class="relative bg-gradient-to-br from-cyan-400 to-blue-500 rounded-3xl p-1">
+                            <div class="bg-slate-900 rounded-3xl p-8">
+                                <img src="Jesus Black&Grey (1).png" alt="Jesus Ortiz - IT Professional" class="w-96 h-96 object-cover rounded-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl text-white text-center mb-4">About Me</h2>
+                <h3 class="text-2xl text-cyan-400 text-center mb-12">Jesus Ortiz</h3>
+                
+                <div class="bg-slate-900 rounded-2xl p-8 border border-slate-700">
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        With a decade of dedicated service in the United States Marine Corps, I gained extensive experience in the world of IT, encompassing network and systems administration, telecommunications, help desk management, and customer service support. I’ve led teams in building secure network infrastructures across global environments. My military tenure also included responsibilities in mentorship, management, administration, training development, inventory management, and physical security at U.S. Embassies worldwide.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        These experiences have sharpened my leadership, communication, problem-solving, and adaptability skills, enabling me to excel in high-pressure, dynamic environments and collaborate effectively within diverse teams.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        I am currently pursuing industry-recognized certifications from CompTIA and Cisco to further enhance my technical proficiency. Known for my ability to quickly master new skills and tackle complex challenges, I am driven by a commitment to teamwork, integrity, and dedication. My goal is to configure, implement, and maintain secure network infrastructures that ensure seamless connectivity and support organizational success.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Please view my resume linked at the top and bottom of this page for a detailed overview of my professional experiences and certifications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl text-white text-center mb-12">Technical Skills</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-xl text-white mb-4">Network Administration</h3>
+                            <div class="space-y-2">
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Cisco Networking</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Routing & Switching</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">VLAN Configuration</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Network Security</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Routing Protocols:BGP, OSPF, EIGRP</span>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-xl text-white mb-4">Systems Administration</h3>
+                            <div class="space-y-2">
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Windows Server: 16/19</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Active Directory</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Linux Server: Ubuntu</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Virtualization</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Cloud Computing: Fundamental</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-xl text-white mb-4">Telecommunications</h3>
+                            <div class="space-y-2">
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">CUCM</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">CME</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">VTC</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">VoIP</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">SIP Trunking</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Call Routing</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-slate-800 border border-slate-700 rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-xl text-white mb-4">Technical Support</h3>
+                            <div class="space-y-2">
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Help Desk Management</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Customer & End-User Support</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Troubleshooting</span>
+                                <span class="inline-block bg-cyan-400/20 text-cyan-400 border border-cyan-400/30 px-2 py-1 rounded text-sm mr-2 mb-2">Cable Termination & installation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl text-white text-center mb-12">Project Portfolio</h2>
+                <div class="space-y-6">
+                    
+                    <!-- Project 1 -->
+                    <div class="bg-slate-900 border border-slate-700 rounded-lg transition-all duration-200 hover:border-cyan-400/50">
+                        <div class="p-6 cursor-pointer" onclick="toggleProject('project1')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <svg id="folder-icon-1" class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"/>
+                                    </svg>
+                                    <h3 class="text-xl text-white">Network+ Capstone</h3>
+                                </div>
+                                <svg id="chevron-1" class="h-4 w-4 text-white transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-300 mt-2">Designed secure multi-campus topology with VLAN segmentation and VoIP integrationin Cisco Packet Tracer</p>
+                        </div>
+                        
+                        <div id="project1" class="project-content">
+                            <div class="px-6 pb-6 space-y-6">
+                                <div>
+                                    <h4 class="text-white mb-3">Technologies & Skills</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Cisco Packet Tracer</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">VLAN</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Routing Protocols</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Network Topology</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Subnetting</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">VOIP</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">CME</span>
+                                    </div>
+                                </div>
+                                
+                                <hr class="border-slate-700">
+                                
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-slate-800 border border-slate-600 rounded p-4">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <svg class="h-4 w-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"/>
+                                            </svg>
+                                            <span class="text-white">Documentation Folder</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">
+                                            Project documentation, technical specifications, and implementation details
+                                        </p>
+                                        <a href="Network+ Capstone Documentation.pdf" target="_blank" rel="noopener noreferrer">
+                                            <button class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-3 py-1 rounded text-sm transition-colors mt-4">
+                                                <svg class="h-3 w-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                                </svg>
+                                                View Documentation
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="bg-slate-800 border border-slate-600 rounded p-4">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <svg class="h-4 w-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"/>
+                                            </svg>
+                                            <span class="text-white">Packet Tracer File</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">
+                                            To view project, you must have Cisco Packet Tracer installed, and have a Cisco Networking Academy Account
+                                        </p>
+                                            <a href="Jesus Ortiz Capstone.pkt" target="_blank" rel="noopener noreferrer">
+                                                <button class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-3 py-1 rounded text-sm transition-colors mt-4">
+                                                    <svg class="h-4 w-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                                                        <circle cx="5" cy="5" r="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                                        <circle cx="19" cy="5" r="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                                        <circle cx="5" cy="19" r="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                                        <circle cx="19" cy="19" r="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                                        <line x1="12" y1="12" x2="5" y2="5" stroke="currentColor" stroke-width="2"/>
+                                                        <line x1="12" y1="12" x2="19" y2="5" stroke="currentColor" stroke-width="2"/>
+                                                        <line x1="12" y1="12" x2="5" y2="19" stroke="currentColor" stroke-width="2"/>
+                                                        <line x1="12" y1="12" x2="19" y2="19" stroke="currentColor" stroke-width="2"/>
+                                                    </svg>
+                                                    View Project
+                                                </button>
+                                            </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex space-x-3">
+                                    <!-- Buttons moved into folder boxes above -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-slate-900 border border-slate-700 rounded-lg transition-all duration-200 hover:border-cyan-400/50 mb-6">
+                        <div class="p-6 cursor-pointer" onclick="toggleProject('project2')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <svg id="folder-icon-2" class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"/>
+                                    </svg>
+                                    <h3 class="text-xl text-white">Server+ Capstone</h3>
+                                </div>
+                                <svg id="chevron-2" class="h-4 w-4 text-white transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-300 mt-2">Built virtualized infrastructure stack using Proxmox VE and Windows/Linux Server roles</p>
+                        </div>
+                        
+                        <div id="project2" class="project-content">
+                            <div class="px-6 pb-6 space-y-6">
+                                <div>
+                                    <h4 class="text-white mb-3">Technologies & Skills</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Proxmox VE</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Virtualization</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Network Segmentation</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Windows Server 2019</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Ubuntu Server 24.04</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">DHCP</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">IIS</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">DNS Server</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">NGINX</span>
+                                    </div>
+                                </div>
+                                <hr class="border-slate-700">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-slate-800 border border-slate-600 rounded p-4">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <svg class="h-4 w-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"/>
+                                            </svg>
+                                            <span class="text-white">Documentation Folder</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">
+                                            Project documentation, technical specifications, and implementation details
+                                        </p>
+                                        <a href="Server+ Capstone Doumentation.pdf" target="_blank" rel="noopener noreferrer">
+                                            <button class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-3 py-1 rounded text-sm transition-colors mt-4">
+                                                <svg class="h-3 w-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                                </svg>
+                                                View Documentation
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                 <div class="flex space-x-3">
+                                    <!-- Buttons moved into folder boxes above -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-slate-900 border border-slate-700 rounded-lg transition-all duration-200 hover:border-cyan-400/50">
+                        <div class="p-6 cursor-pointer" onclick="toggleProject('project3')">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <svg id="folder-icon-3" class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"/>
+                                    </svg>
+                                    <h3 class="text-xl text-white">CySA+ Capstone</h3>
+                                </div>
+                                <svg id="chevron-3" class="h-4 w-4 text-white transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </div>
+                            <p class="text-gray-300 mt-2">SOC Simulation Lab: Threat Detection and Response with OSSIM & Kali</p>
+                        </div>
+                        
+                        <div id="project3" class="project-content">
+                            <div class="px-6 pb-6 space-y-6">
+                                <div>
+                                    <h4 class="text-white mb-3">Technologies & Skills</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">SIEM</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Alien Vault OSSIM</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Kali Linux</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Windows 10</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Threat Detection</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Incident Response</span>
+                                        <span class="border border-cyan-400/30 text-cyan-400 px-2 py-1 rounded text-sm">Security Analysis</span>
+                                    </div>
+                                </div>
+                                <hr class="border-slate-700">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-slate-800 border border-slate-600 rounded p-4">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <svg class="h-4 w-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"/>
+                                            </svg>
+                                            <span class="text-white">Documentation Folder</span>
+                                        </div>
+                                        <p class="text-gray-400 text-sm">
+                                            Project documentation, technical specifications, and implementation details
+                                        </p>
+                                        <a href="CySA+ Documentation.pdf" target="_blank" rel="noopener noreferrer">
+                                            <button class="border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 px-3 py-1 rounded text-sm transition-colors mt-4">
+                                                <svg class="h-3 w-3 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                                </svg>
+                                                View Documentation
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Buttons moved into folder boxes above -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl text-white mb-8">Get In Touch</h2>
+                <p class="text-gray-300 text-lg mb-8">
+                    Interested in connecting or discussing potential opportunities? Feel free to reach out through any of my professional channels.
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/jesus-g-ortiz" target="_blank" rel="noopener noreferrer" 
+                       class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </div>
+                    </a>
+                    <a href="https://www.credly.com/users/jesus-g-ortiz" target="_blank" rel="noopener noreferrer" 
+                       class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                            <span>Credly</span>
+                        </div>
+                    </a>
+                    <a href="https://jgortiz96.github.io/Jesus_Ortiz_Resume_Site/" target="_blank" rel="noopener noreferrer" 
+                       class="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            <span>Resume</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-700 bg-slate-900">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="text-gray-400">
+                © 2025 Jesus Ortiz. Built on Figma.com, VS-Code, and hosted on GitHub.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleProject(projectId) {
+            const content = document.getElementById(projectId);
+            const projectNumber = projectId.replace('project', '');
+            const chevron = document.getElementById('chevron-' + projectNumber);
+            const folderIcon = document.getElementById('folder-icon-' + projectNumber);
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                chevron.style.transform = 'rotate(0deg)';
+                folderIcon.classList.remove('text-cyan-400');
+                folderIcon.classList.add('text-gray-400');
+            } else {
+                content.classList.add('expanded');
+                chevron.style.transform = 'rotate(90deg)';
+                folderIcon.classList.remove('text-gray-400');
+                folderIcon.classList.add('text-cyan-400');
+            }
+        }
+    </script>
+</body>
+</html>
